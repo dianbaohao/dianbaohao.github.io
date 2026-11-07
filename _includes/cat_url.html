@@ -1,3 +1,0 @@
-{%- assign _cat = include.cat -%}
-{%- assign _slug = site.data.categories[_cat] | default: _cat | slugify -%}
-{{ site.url }}/categories/{{ _slug }}/

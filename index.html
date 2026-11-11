@@ -1,0 +1,254 @@
+---
+layout: default
+title: 纸飞机账号批发 - Telegram账号_TG账号_纸飞机账号批量出售
+description: 纸飞机账号、Telegram账号、TG账号批发与零售，提供接码号、新号、老号（1-10年）等不同类型，现货直发，自动发货，质保首次登录，支持个人购买和批量采购，价格透明可查。
+keywords: 纸飞机账号,Telegram账号,TG账号,纸飞机账号批发,Telegram账号批发,TG账号批发,纸飞机账号购买,Telegram账号购买,TG号购买,Telegram接码号,Telegram老号,纸飞机账号出售
+---
+
+{% assign tg = site.data.tg_products %}
+
+
+<!-- Hero -->
+<section class="hd-hero" aria-labelledby="hero-title">
+  <div class="hd-hero-grid">
+    <div class="hd-hero-copy">
+      <span class="eyebrow"><i></i> TELEGRAM ACCOUNTS / 现货批量供应</span>
+      <h1 class="hd-hero-title" id="hero-title">
+        <span class="gradient">纸飞机账号批发</span>
+        按需拿货 · 现货直发
+      </h1>
+      <p class="hd-hero-desc">TG 接码号、新号、1-10 年老号，混合国家现货。<br>下单自动发货，质保首次登录，价格与库存实时同步商城。</p>
+      <div class="hd-hero-actions">
+        <a class="hd-btn hd-btn-primary" href="{{ site.url }}/products/">查看全部号源 <span aria-hidden="true">→</span></a>
+        <a class="hd-btn hd-btn-ghost" href="{{ site.url }}/price/">看价格表 <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hd-hero-metrics">
+        <div class="hd-metric"><b>{{ tg.in_stock_count }}</b><span>个号源在售</span></div>
+        <div class="hd-metric"><b>¥{{ tg.min_price }}</b><span>低至 / 个起</span></div>
+        <div class="hd-metric"><b>180 天</b><span>接码链接有效期</span></div>
+        <div class="hd-metric"><b>7×24</b><span>自动发货</span></div>
+      </div>
+    </div>
+    <div class="hd-hero-visual" aria-hidden="true">
+      <div class="hd-dash">
+        <div class="hd-stock-card"><span class="k">接码号 / 新号</span><span class="v">¥{{ tg.min_price }}<em> 起</em></span><span class="k">混合国家双向号 · 走量首选</span></div>
+        <div class="hd-stock-card"><span class="k">1-10 年老号</span><span class="v">¥10.16<em> 起</em></span><span class="k">风控门槛更低 · 长期挂机</span></div>
+        <div class="hd-stock-card"><span class="k">库存实时</span><span class="v">{{ tg.total_stock }}<em> 个</em></span><span class="k">数据抓取于 {{ tg.updated }}</span></div>
+        <div class="hd-stock-card"><span class="k">交付方式</span><span class="v">自动<em> 发货</em></span><span class="k">付款后系统直发</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 核心卖点条 -->
+<section class="feature-strip">
+  <div class="feature-item">
+    <span class="feature-icon">📦</span>
+    <div><h3>自动发货</h3><p>付款后系统直接发出手机号与接码网址</p></div>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">💰</span>
+    <div><h3>低至 ¥{{ tg.min_price }}</h3><p>混合国家双向号，量大可谈阶梯价</p></div>
+  </div>
+  <div class="feature-item">
+    <span class="feature-icon">🛡️</span>
+    <div><h3>质保首登</h3><p>质保首次登录，接码链接 180 天有效</p></div>
+  </div>
+</section>
+
+<!-- 号源分类（haoduoduo 资源卡） -->
+<section class="hd-section" id="resources" aria-labelledby="res-title">
+  <div class="hd-section-pad">
+    <div class="hd-section-head">
+      <h2 id="res-title">全部号源 · <span class="grad-text">按需选购</span></h2>
+      <p>接码号、新号、老号，价格与库存实时同步商城，下单自动发货。</p>
+    </div>
+    <div class="hd-res-grid">
+      {% assign c1 = tg.new | where: "title", "TG API 混合国家双向号" | first %}
+      <a class="hd-res-card" href="{{ site.url }}/products/">
+        <span class="ic">🟢</span>
+        <h3>接码号 · 混合国家</h3>
+        <p class="desc">提供虚拟手机号用于 Telegram 登录验证，适合批量注册、走量场景。库存 {{ c1.stock }} 个。</p>
+        <div class="hd-price-box"><span class="label">单价</span><b>¥{{ c1.price_f }}</b> <em>/ 个起</em></div>
+        <span class="hd-btn hd-btn-ghost" style="justify-content:center">查看该档 →</span>
+      </a>
+      {% assign c2 = tg.new | where_exp: "x", "x.title contains '巴西'" | first %}
+      <a class="hd-res-card" href="{{ site.url }}/products/">
+        <span class="ic">🌎</span>
+        <h3>新号 · 固定国家</h3>
+        <p class="desc">巴西、阿根廷、墨西哥等固定国家档，补货稳定。库存 {{ c2.stock }} 个。</p>
+        <div class="hd-price-box"><span class="label">单价</span><b>¥{{ c2.price_f }}</b> <em>/ 个</em></div>
+        <span class="hd-btn hd-btn-ghost" style="justify-content:center">查看该档 →</span>
+      </a>
+      {% assign c3 = tg.old | where_exp: "x", "x.title contains '荷兰'" | first %}
+      <a class="hd-res-card" href="{{ site.url }}/products/">
+        <span class="ic">📀</span>
+        <h3>老号 · 1-10 年</h3>
+        <p class="desc">注册 1-10 年的稳定账号，风控门槛低，适合长期挂机。库存 {{ c3.stock }} 个。</p>
+        <div class="hd-price-box"><span class="label">单价</span><b>¥{{ c3.price_f }}</b> <em>/ 个起</em></div>
+        <span class="hd-btn hd-btn-ghost" style="justify-content:center">查看该档 →</span>
+      </a>
+      {% assign c4 = tg.old | sort: "price" | reverse | first %}
+      <a class="hd-res-card" href="{{ site.url }}/products/">
+        <span class="ic">💎</span>
+        <h3>顶配 · 加拿大/美国</h3>
+        <p class="desc">站内最高档老号，加拿大/美国 1-10 年，库存 {{ c4.stock }} 个。</p>
+        <div class="hd-price-box"><span class="label">单价</span><b>¥{{ c4.price_f }}</b> <em>/ 个</em></div>
+        <span class="hd-btn hd-btn-ghost" style="justify-content:center">查看该档 →</span>
+      </a>
+    </div>
+    <p class="shop-note">以上价格与库存来自商城实时数据（抓取时间 {{ tg.updated }}），实际以下单时商城页面为准。账号为虚拟商品，发货后不支持退换。</p>
+  </div>
+</section>
+
+<!-- 核心服务能力 -->
+<section class="hd-section" id="cap" aria-labelledby="cap-title">
+  <div class="hd-section-pad">
+    <div class="hd-section-head">
+      <h2 id="cap-title">资源、交付、价格、质保 <span class="grad-text">统一采购体验</span></h2>
+      <p>围绕资源类型、交付效率、价格信息和售后质保，构建完整采购链路。</p>
+    </div>
+    <div class="hd-cap-grid">
+      <div class="hd-cap-card"><span class="ic">📊</span><h3>库存实时可查</h3><p>每个号源的库存与价格实时同步商城，下单前就能看到。</p></div>
+      <div class="hd-cap-card"><span class="ic">⚡</span><h3>自动购买交付</h3><p>注册、充值、购买、下载全流程在线完成，付款即发货。</p></div>
+      <div class="hd-cap-card"><span class="ic">🛡️</span><h3>质保首次登录</h3><p>首登失败凭订单号提交核实，按对应商品规则处理。</p></div>
+      <div class="hd-cap-card"><span class="ic">📋</span><h3>订单全程可查</h3><p>从下单、扣费、发货到下载记录统一展示，方便复查。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 购买流程 -->
+<section class="hd-section" id="process" aria-labelledby="proc-title">
+  <div class="hd-section-pad">
+    <div class="hd-section-head">
+      <h2 id="proc-title">四步自助购买 <span class="grad-text">并导出账号</span></h2>
+      <p>平台、账号类型、国家、库存、数量和积分都在商城后台中完成确认。</p>
+    </div>
+    <div class="hd-process">
+      <div class="hd-step-card"><span class="num">STEP 01</span><h3>确认要哪种号</h3><p>先说清用途：只是登录选接码号，介意年龄看老号。</p></div>
+      <div class="hd-step-card"><span class="num">STEP 02</span><h3>在商城下单</h3><p>进入商城选对应号源，登录后选择数量付款。</p></div>
+      <div class="hd-step-card"><span class="num">STEP 03</span><h3>收货内容</h3><p>拿到「手机号 + 接码网址」，接码链接 180 天有效。</p></div>
+      <div class="hd-step-card"><span class="num">STEP 04</span><h3>登录后养号</h3><p>改两步验证、绑自己的邮箱，12-24 小时再上量。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 为什么选我们 -->
+<section class="hd-section" id="why" aria-labelledby="why-title">
+  <div class="hd-section-pad">
+    <div class="hd-section-head">
+      <h2 id="why-title">为什么选择我们 · <span class="grad-text">透明采购在线交付</span></h2>
+      <p>从供货源头、订单交付到异常核实，帮助团队更高效完成资源采购。</p>
+    </div>
+    <div class="hd-why-grid">
+      <div class="hd-why-card"><span class="ic">📈</span><h3>价格公开透明</h3><p>首页展示最低起购价，平台内按国家、账号类型和库存情况查看实时价格。</p></div>
+      <div class="hd-why-card"><span class="ic">🔎</span><h3>订单全链路可追踪</h3><p>从下单、扣费、发货到下载记录统一展示，方便团队复查、二次获取和售后沟通。</p></div>
+      <div class="hd-why-card"><span class="ic">📦</span><h3>批量采购可定制</h3><p>大客户、代理、团队采购可按国家、类型、数量进行资源匹配与专属报价。</p></div>
+      <div class="hd-why-card"><span class="ic">🤝</span><h3>异常有据</h3><p>保留订单号、交付时间和错误信息，按对应商品说明提交核实。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 常见问题 -->
+<section class="hd-section" id="faq" aria-labelledby="faq-title">
+  <div class="hd-section-pad">
+    <div class="hd-section-head">
+      <h2 id="faq-title">关于账号购买与交付的 <span class="grad-text">常见问题</span></h2>
+      <p>购买流程、账号类型、价格与售后规则，一次讲清楚。</p>
+    </div>
+    <div class="hd-faq-list">
+      <details class="hd-faq-item">
+        <summary><h3>TG 账号多少钱一个？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">按型号分档：混合国家双向号 ¥{{ tg.min_price }} 起，常见国家接码号 ¥5.50 – ¥11.00，1-10 年老号 ¥10.16 – ¥15.85。批发量大可谈阶梯价，具体以商城页面报价为准。</p>
+      </details>
+      <details class="hd-faq-item">
+        <summary><h3>买号是自动发货吗？要等多久？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">是自动发货。付款完成后系统直接发出手机号和接码网址，不用等人工审核。如果长时间没收到，先看商城的订单详情页。</p>
+      </details>
+      <details class="hd-faq-item">
+        <summary><h3>接码链接 180 天，能一直收短信吗？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">不能。这个链接只是为了让首次登录方便，本质上是一次性的。我们把有效期设到 180 天是为了给你留足时间，不是让你当长期短信接收器用。</p>
+      </details>
+      <details class="hd-faq-item">
+        <summary><h3>买的号能改密码、绑自己的手机吗？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">可以。登录后就能改两步验证密码，能改邮箱的号也可以绑自己的邮箱；手机端登录后 24 小时内绑定自己的号码更稳。</p>
+      </details>
+      <details class="hd-faq-item">
+        <summary><h3>账号是虚拟商品，能退吗？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">发货后不支持退换。请先确认用途再下单。质保首次登录——首登失败凭订单号找客服处理，别自己反复试。</p>
+      </details>
+      <details class="hd-faq-item">
+        <summary><h3>怎么联系客服问批发价？</h3><span class="hd-faq-toggle"></span></summary>
+        <p class="hd-faq-answer">商城下单页面有客服入口。批量采购（一般 50 个以上）可在商城内直接咨询阶梯价。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="hd-cta" aria-labelledby="cta-title">
+  <div class="hd-cta-inner">
+    <div class="hd-cta-copy">
+      <h2 id="cta-title">需要查看最新账号库存与所需积分？</h2>
+      <p>进入商城选择账号类型与国家，核对库存、所需积分和交付格式后提交。</p>
+      <div class="hd-cta-points">
+        <span><i>✓</i>库存可查</span>
+        <span><i>✓</i>订单可查</span>
+        <span><i>✓</i>异常可留证</span>
+      </div>
+    </div>
+    <div class="hd-cta-actions">
+      <a class="hd-btn hd-btn-primary" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener">立即购买 ↗</a>
+      <a class="hd-btn hd-btn-ghost" href="{{ site.url }}/articles/">选购指南</a>
+    </div>
+  </div>
+</section>
+
+<!-- 价格表（快速参考） -->
+<section class="section" id="price-table" aria-labelledby="pt-title">
+  <div class="section-head">
+    <h2>💰 号源价格表</h2>
+    <span class="more-link">共 {{ tg.total }} 个号源</span>
+  </div>
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr><th>号源</th><th>类型</th><th>价格</th><th>库存</th></tr>
+      </thead>
+      <tbody>
+        {% for p in tg.products %}
+        <tr>
+          <td>{{ p.title }}</td>
+          <td>{% if p.cat_slug == 'old' %}老号{% else %}新号{% endif %}</td>
+          <td>¥{{ p.price_f }}</td>
+          <td class="{{ p.stock_cls }}">{% if p.stock == 0 %}缺货{% elsif p.stock <= 10 %}仅 {{ p.stock }}{% else %}{{ p.stock }}{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="table-more">表中为全部在售号源，另有小众国家档位补货不稳定会临时缺货，<a href="{{ site.url }}/products/" target="_blank" rel="nofollow noopener">查看全部号源详情 →</a></p>
+</section>
+
+
+<!-- 悬浮快捷栏 -->
+<div class="hd-floatbar" aria-label="快捷入口">
+  <a href="#top" title="回到顶部" aria-label="回到顶部">⬆</a>
+  <a href="{{ site.url }}/products/" title="全部号源" aria-label="全部号源">📋</a>
+  <a href="{{ site.url }}/price/" title="价格表" aria-label="价格表">💰</a>
+  <a class="buy" href="https://shop.xinkonyun.cc/products" target="_blank" rel="nofollow noopener" title="去商城下单" aria-label="去商城下单">🛒</a>
+</div>
+
+<script>
+// 顶部导航滚动变色
+(function () {
+  var bar = document.getElementById('hd-topbar');
+  if (!bar) return;
+  function onScroll() {
+    if (window.scrollY > 20) { bar.classList.add('scrolled'); }
+    else { bar.classList.remove('scrolled'); }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
